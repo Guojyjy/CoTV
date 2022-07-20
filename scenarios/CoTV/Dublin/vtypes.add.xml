@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+	
+	<vType id="HDC" vClass="passenger" tau="1.2" lcStrategic="0.5" probability="1" accel="2.5" decel="7.5" sigma="0.5" minGap="2.5" maxSpeed="15" speedFactor="1.0" speedDev="0.1" impatience="0.5" carFollowModel="Krauss" laneChangeModel="LC2013" lcCooperative="1.0" lcSpeedGain="1.0" lcKeepRight="1.0"/>
+
+	
+</additional>
