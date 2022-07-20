@@ -69,7 +69,7 @@ To run a docker container based on the CoTV docker image:
 # first pull the image from docker hub and run a container
 # -d, run container in background and print container ID
 # --env, --volume, allow to execute sumo-gui
-docker run -dit --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" cotv
+docker run -dit --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" gjyjy/cotv:latest
 # find the container id
 docker ps
 # interact with the running container in terminal
