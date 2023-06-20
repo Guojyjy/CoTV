@@ -123,7 +123,7 @@ flow_params = dict(
         sim_step=1,
         render=False,
         emission_path="{}output/FixedTime_1x1grid".format(
-            os.path.abspath(os.path.dirname(__file__)).split('flow')[0]),
+            os.getcwd().split('flow')[0]),
         # recommend absolute directory path
     ),
 

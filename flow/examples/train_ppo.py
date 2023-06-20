@@ -43,7 +43,7 @@ def parse_args(args):
         '--num_cpus', type=int, default=1,
         help='How many CPUs to use')
     parser.add_argument(
-        '--num_steps', type=int, default=5000,
+        '--num_steps', type=int, default=999,
         help='How many total steps to perform learning over')
     parser.add_argument(
         '--rollout_size', type=int, default=1000,
@@ -110,7 +110,7 @@ def setup_exps_rllib(flow_params,
     config["num_gpus"] = 1
     config["timesteps_per_iteration"] = horizon * n_rollouts
     config['no_done_at_end'] = True
-
+    config['log_level'] = "ERROR"
     # save the flow params for replay, params.json file
     flow_json = json.dumps(
         flow_params, cls=FlowParamsEncoder, sort_keys=True, indent=4)
@@ -157,7 +157,7 @@ def train_rllib(submodule, flags):
         "config": {
             **config
         },
-        "checkpoint_freq": 10,
+        "checkpoint_freq": 5,
         "checkpoint_at_end": True,
         "max_failures": 999,
         "stop": {

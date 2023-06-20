@@ -17,13 +17,13 @@ from flow.networks import SumoNetwork
 # Experiment parameters
 N_ROLLOUTS = 18  # number of rollouts per training iteration
 N_CPUS = 18  # number of parallel workers
-HORIZON = 720  # time horizon of a single rollout
+HORIZON = 900  # time horizon of a single rollout
 
 SPEED_LIMIT = 15
 MAX_ACCEL = 3  # maximum acceleration for autonomous vehicles, in m/s^2
 MAX_DECEL = 3  # maximum deceleration for autonomous vehicles, in m/s^2
 
-ABS_DIR = os.path.abspath(os.path.dirname(__file__)).split('flow')[0]
+ABS_DIR = os.getcwd().split('flow')[0]
 
 vehicles = VehicleParams()
 
@@ -31,7 +31,7 @@ vehicles = VehicleParams()
 tl_logic = TrafficLightParams(baseline=False)
 
 flow_params = dict(
-    exp_tag='FlowCAV_Dublin',
+    exp_tag='FlowCAV_1km',
 
     env_name=FlowCAVCustomEnv,
 
@@ -43,7 +43,7 @@ flow_params = dict(
         render=False,
         sim_step=1,
         restart_instance=True,
-        emission_path="{}output/FlowCAV_Dublin".format(ABS_DIR)
+        emission_path="{}output/FlowCAV_1km".format(ABS_DIR)
     ),
 
     env=EnvParams(
@@ -58,9 +58,9 @@ flow_params = dict(
 
     net=NetParams(
         template={
-            "net": "{}/scenarios/CoTV/Dublin/dublin.net.xml".format(ABS_DIR),
-            "rou": "{}/scenarios/CoTV/Dublin/dublin_clip_rl.rou.xml".format(ABS_DIR),
-            "vtype": "{}/scenarios/CoTV/Dublin/rl_vtypes.add.xml".format(ABS_DIR)}
+            "net": "{}/scenarios/CoTV/selected1km/selected1km.net.xml".format(ABS_DIR),
+            "rou": "{}/scenarios/CoTV/selected1km/selected1km_rl.rou.xml".format(ABS_DIR),
+            "vtype": "{}/scenarios/CoTV/selected1km/rl_vtypes.add.xml".format(ABS_DIR)}
     ),
 
     veh=vehicles,

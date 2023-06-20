@@ -1,4 +1,4 @@
-"""PressLight under grid maps generated in FLOW"""
+"""GLOSA (&actuated) under grid maps generated in FLOW"""
 import os.path
 
 from ray.rllib.agents.dqn.dqn_policy import DQNTFPolicy
@@ -85,6 +85,7 @@ for edge in top_edges:  # E->W
 
 # Traffic light parameters
 tl_logic = TrafficLightParams(baseline=False)
+# --- actuated ---
 phases = [{
     "duration": "31",
     "minDur": "8",
@@ -114,6 +115,24 @@ for i in range(0, num_tl):
                  detectorGap=2,
                  showDetectors=True,
                  freq=100)
+# --- FixedTime
+# phases = [{
+#     "duration": "40",
+#     "state": "GrGr"
+# }, {
+#     "duration": "3",
+#     "state": "yryr"
+# }, {
+#     "duration": "40",
+#     "state": "rGrG"
+# }, {
+#     "duration": "3",
+#     "state": "ryry"
+# }]
+# num_tl = N_ROWS * N_COLUMNS
+# for i in range(0, num_tl):
+#     tl_id = "center" + str(i)
+#     tl_logic.add(tl_id, phases=phases, programID="1", tls_type="static")
 
 # Integrate parameters for this module
 flow_params = dict(
@@ -135,7 +154,7 @@ flow_params = dict(
         sim_step=1,
         render=False,  # True, the detector deployed successfully in SUMO-gui
         emission_path="{}output/GLOSA_1x6grid".format(
-            os.path.abspath(os.path.dirname(__file__)).split('flow')[0]),
+            os.getcwd().split('flow')[0]),
         # recommend absolute directory path
     ),
 

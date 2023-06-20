@@ -100,8 +100,10 @@ conda activate flow
 #### CoTV 
 
 ```shell
-python examples/train_ppo.py CoTV_grid --num_steps 150 # for 1x1 and 1x6 grid maps
-python examples/train_ppo.py CoTV_Dublin # for Dublin scenario
+# for 1x1 and 1x6 grid maps
+python examples/train_ppo.py CoTV_grid --num_steps 150
+# for Dublin scenario, i.e., six consecutive intersections, or another extended Dublin scenario covering almost 1km^2
+python examples/train_ppo.py CoTV_Dublin 
 ```
 
 - ***train_ppo.py*** includes DRL algorithm assigned and parameter settings
@@ -111,13 +113,14 @@ python examples/train_ppo.py CoTV_Dublin # for Dublin scenario
 - The SUMO files of Dublin scenario locate in ***CoTV/scenarios***
 - System design in ***flow/flow/env/multiagent***
   - ***traffic_light_grid.py*** for grid maps
-    - ***CoTV*** for full-autonomy and mixed-autonomy traffic
-    - ***CoTVAll*** is the implementation of *CoTV* *, controlling all CAVs under full-autonomy traffic
-
-  - ***sumo_template.py*** for Dublin scenario
-    - ***CoTVCustomEnv*** for full-autonomy traffic
-    - ***CoTVMixedCustomEnv*** for mixed-autonomy traffic
-    - ***CoTVAllCustomEnv*** is the implementation of *CoTV* *
+    - ***CoTV*** is action-independent multi-agent DRL model with cooperation schemes in the state exchange, for full-autonomy and mixed-autonomy traffic.
+    - ***CoTVAll*** is the implementation of *CoTV* *, controlling all CAVs under full-autonomy traffic.
+    - ***CoTVNOCoord*** is the implementation of *I-CoTV*, combining independent policy training on the two type of agents (CAV and traffic light controller). There is no cooperation design in either state or action.
+  - ***sumo_template.py*** for Dublin scenarios
+    - ***CoTVCustomEnv*** for full-autonomy traffic.
+    - ***CoTVMixedCustomEnv*** for mixed-autonomy traffic.
+    - ***CoTVAllCustomEnv*** is the implementation of *CoTV* *.
+    - ***CoTVNOCoorCustomEnv*** is the implementation of *I-CoTV*.
 
 
 #### PressLight[1]
@@ -190,11 +193,12 @@ python examples/train_ppo.py FlowCAV_Dublin
 #### Citing
 
 ```latex
-@article{guo2022cotv,
-  title={CoTV: Cooperative Control for Traffic Light Signals and Connected Autonomous Vehicles using Deep Reinforcement Learning},
+@article{guo2023cotv,
+  title={CoTV: Cooperative Control for Traffic Light Signals and Connected Autonomous Vehicles Using Deep Reinforcement Learning},
   author={Guo, Jiaying and Cheng, Long and Wang, Shen},
-  journal={arXiv preprint arXiv:2201.13143},
-  year={2022}
+  journal={IEEE Transactions on Intelligent Transportation Systems},
+  year={2023},
+  publisher={IEEE}
 }
 ```
 

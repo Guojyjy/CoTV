@@ -10,12 +10,12 @@ from flow.envs.multiagent.ring.accel import MultiAgentAccelPOEnv
 from flow.envs.multiagent.ring.accel import FlowCAV
 from flow.envs.multiagent.traffic_light_grid import MultiTrafficLightGridPOEnv
 from flow.envs.multiagent.traffic_light_grid import PressLight
-from flow.envs.multiagent.traffic_light_grid import CoTVAll, CoTV
+from flow.envs.multiagent.traffic_light_grid import CoTVAll, CoTV, CoTVNOCoord
 from flow.envs.multiagent.highway import MultiAgentHighwayPOEnv
 from flow.envs.multiagent.merge import MultiAgentMergePOEnv
 from flow.envs.multiagent.i210 import I210MultiEnv
 from flow.envs.multiagent.sumo_template import CoTVCustomEnv, CoTVAllCustomEnv, CoTVMixedCustomEnv, \
-    PressLightCustomEnv, FlowCAVCustomEnv
+    PressLightCustomEnv, FlowCAVCustomEnv, CoTVNOCoorCustomEnv
 
 __all__ = [
     'MultiEnv',
@@ -32,10 +32,12 @@ __all__ = [
     'FlowCAV',
     'CoTVAll',
     'CoTV',
+    'CoTVNOCoord',
     # for SUMO template
     'PressLightCustomEnv',
     'FlowCAVCustomEnv',
     'CoTVAllCustomEnv',
     'CoTVCustomEnv',
     'CoTVMixedCustomEnv',
+    'CoTVNOCoorCustomEnv'
 ]

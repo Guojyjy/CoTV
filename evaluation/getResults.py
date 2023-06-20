@@ -106,12 +106,16 @@ def get_main_metric(tripinfo_files, path, speed_limit):
     avg_finished_trip_num = np.mean(finished_trip_num)
     print('Average finished trip number in this scenario: ', avg_finished_trip_num)
     print('Average vehicle trip length (m): ', avg_all_trip_length / avg_finished_trip_num)
-    fuel = np.mean(fuel) / (avg_all_trip_length / 100)  # ml/m -> l/100km
-    CO2 = np.mean(CO2) / avg_all_trip_length  # mg/m -> g/km
-    delay = (np.mean(duration) - avg_all_trip_length / speed_limit) / avg_finished_trip_num
-    duration = np.mean(duration) / avg_finished_trip_num
+    fuell = np.mean(fuel) / (avg_all_trip_length / 100)  # ml/m -> l/100km
+    print(f'fuel: avg-{fuell}, med-{np.median(fuel) / (avg_all_trip_length / 100)}, std-{np.std(fuel / (avg_all_trip_length / 100))}')
+    CO22 = np.mean(CO2) / avg_all_trip_length  # mg/m -> g/km
+    print(f'CO2: avg-{CO22}, med-{np.median(CO2) / avg_all_trip_length}, std-{np.std(CO2 / avg_all_trip_length)}')
+    delayy = (np.mean(duration) - avg_all_trip_length / speed_limit) / avg_finished_trip_num
+    print(f'delay: avg-{delayy}, med-{(np.median(duration)  - avg_all_trip_length / speed_limit) / avg_finished_trip_num}, std-{np.std(duration / avg_finished_trip_num - avg_all_trip_length / speed_limit)}')
+    durationn = np.mean(duration) / avg_finished_trip_num
+    print(f'duration: avg-{durationn}, med-{np.median(duration) / avg_finished_trip_num}, std-{np.std(duration / avg_finished_trip_num)}')
 
-    return fuel, CO2, duration, delay, tt_veh
+    return fuell, CO22, durationn, delayy, tt_veh
 
 
 def get_safety_metric(ssm_files, path):

@@ -15,13 +15,13 @@ from flow.utils.registry import make_create_env
 # Experiment parameters
 N_ROLLOUTS = 18  # number of rollouts per training iteration
 N_CPUS = 18  # number of parallel workers
-HORIZON = 720  # time horizon of a single rollout
+HORIZON = 900  # time horizon of a single rollout
 
 SPEED_LIMIT = 15
 MAX_ACCEL = 3  # maximum acceleration for autonomous vehicles, in m/s^2
 MAX_DECEL = 3  # maximum deceleration for autonomous vehicles, in m/s^2
 
-ABS_DIR = os.path.abspath(os.path.dirname(__file__)).split('flow')[0]
+ABS_DIR = os.getcwd().split('flow')[0]
 
 vehicles = VehicleParams()
 
@@ -30,7 +30,7 @@ tl_logic = TrafficLightParams(baseline=False)
 
 
 flow_params = dict(
-    exp_tag='FixedTime_dublin',
+    exp_tag='FixedTime_1km',
 
     env_name=PressLightCustomEnv,
 
@@ -42,7 +42,7 @@ flow_params = dict(
         render=False,
         sim_step=1,
         restart_instance=True,
-        emission_path="{}output/FixedTime_dublin".format(ABS_DIR)
+        emission_path="{}output/FixedTime_1km".format(ABS_DIR)
     ),
 
     env=EnvParams(
@@ -56,9 +56,9 @@ flow_params = dict(
 
     net=NetParams(
         template={
-            "net": "{}/scenarios/CoTV/Dublin/dublin.net.xml".format(ABS_DIR),
-            "rou": "{}/scenarios/CoTV/Dublin/dublin_clip.rou.xml".format(ABS_DIR),
-            "vtype": "{}/scenarios/CoTV/Dublin/vtypes.add.xml".format(ABS_DIR)}
+            "net": "{}/scenarios/CoTV/selected1km/selected1km.net.xml".format(ABS_DIR),
+            "rou": "{}/scenarios/CoTV/selected1km/selected1km.rou.xml".format(ABS_DIR),
+            "vtype": "{}/scenarios/CoTV/selected1km/vtypes.add.xml".format(ABS_DIR)}
     ),
 
     veh=vehicles,

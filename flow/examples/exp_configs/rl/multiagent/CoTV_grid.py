@@ -105,7 +105,7 @@ flow_params = dict(
         restart_instance=True,
         sim_step=1,
         render=False,
-        emission_path="{}output/CoTV_1x1grid".format(os.path.abspath(os.path.dirname(__file__)).split('flow')[0]),
+        emission_path="{}output/CoTV_1x1grid".format(os.getcwd().split('flow')[0]),
     ),
 
     # environment related parameters (see flow.core.params.EnvParams)

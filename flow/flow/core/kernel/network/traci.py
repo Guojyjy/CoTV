@@ -814,6 +814,8 @@ class TraCIKernelNetwork(BaseKernelNetwork):
             if each.tag == 'flow' or each.tag == 'vehicle':  # tag: flow (grid maps), vehicle (dublin)
                 if glosa_device:  # deploy GLOSA device to the rou.xml file
                     each.append(E('param', key="has.glosa.device", value='true'))
+                    each.append(E('param', key="device.glosa.range", value='100'))  # default
+                    each.append(E('param', key="device.glosa.min-speed", value='5')) # default
                 if safety_device:
                     each.append(E(  # deploy SSM device to the rou.xml file
                         'param', key='has.ssm.device', value='true'))

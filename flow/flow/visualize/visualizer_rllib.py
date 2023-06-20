@@ -102,7 +102,7 @@ def visualizer_rllib(args):
 
     sim_params.restart_instance = True
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    emission_path = '{0}/output/Dublin_flowCAV/'.format(dir_path)  # test_time_rollout
+    emission_path = '{0}/output/FlowCAV_1km/'.format(dir_path)  # test_time_rollout
     sim_params.emission_path = emission_path if args.gen_emission else None
 
     # pick your rendering mode
@@ -307,7 +307,7 @@ def visualizer_rllib(args):
         emission_filename = '{0}-emission.xml'.format(env.network.name)
 
         emission_path = \
-            '{0}/output/Dublin_flowCAV/{1}'.format(dir_path, emission_filename)  # test_time_rollout
+            '{0}/output/FlowCAV_1km/{1}'.format(dir_path, emission_filename)  # test_time_rollout
 
         print("\nGenerated emission file at " + dir_path)
         print(emission_path)
