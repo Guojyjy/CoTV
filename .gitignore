@@ -162,4 +162,5 @@ cython_debug/
 
 **/.idea/
 **/output/
+ray_results/
 

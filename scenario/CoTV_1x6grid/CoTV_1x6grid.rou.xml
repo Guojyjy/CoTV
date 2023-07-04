@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+  <route id="routebot0_0_0" edges="bot0_0 bot0_1 bot0_2 bot0_3 bot0_4 bot0_5 bot0_6"/>
+  <route id="routetop0_6_0" edges="top0_6 top0_5 top0_4 top0_3 top0_2 top0_1 top0_0"/>
+  <route id="routeleft1_0_0" edges="left1_0 left0_0"/>
+  <route id="routeright0_0_0" edges="right0_0 right1_0"/>
+  <route id="routeleft1_1_0" edges="left1_1 left0_1"/>
+  <route id="routeright0_1_0" edges="right0_1 right1_1"/>
+  <route id="routeleft1_2_0" edges="left1_2 left0_2"/>
+  <route id="routeright0_2_0" edges="right0_2 right1_2"/>
+  <route id="routeleft1_3_0" edges="left1_3 left0_3"/>
+  <route id="routeright0_3_0" edges="right0_3 right1_3"/>
+  <route id="routeleft1_4_0" edges="left1_4 left0_4"/>
+  <route id="routeright0_4_0" edges="right0_4 right1_4"/>
+  <route id="routeleft1_5_0" edges="left1_5 left0_5"/>
+  <route id="routeright0_5_0" edges="right0_5 right1_5"/>
+  <flow id="flow_00" route="routeright0_0_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_10" route="routeright0_1_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_20" route="routeright0_2_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_30" route="routeright0_3_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_40" route="routeright0_4_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_50" route="routeright0_5_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_60" route="routebot0_0_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="240.0"/>
+  <flow id="flow_70" route="routeleft1_0_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_80" route="routeleft1_1_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_90" route="routeleft1_2_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_100" route="routeleft1_3_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_110" route="routeleft1_4_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_120" route="routeleft1_5_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_130" route="routetop0_6_0" type="rl" departLane="free" departSpeed="random" begin="60" end="360" vehsPerHour="192.0"/>
+</routes>

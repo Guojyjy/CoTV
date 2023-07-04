@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+  <route id="routebot0_0_0" edges="bot0_0 bot0_1"/>
+  <route id="routetop0_1_0" edges="top0_1 top0_0"/>
+  <route id="routeleft1_0_0" edges="left1_0 left0_0"/>
+  <route id="routeright0_0_0" edges="right0_0 right1_0"/>
+  <flow id="flow_00" route="routeright0_0_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="120.0"/>
+  <flow id="flow_10" route="routebot0_0_0" type="rl" departLane="free" departSpeed="random" begin="1" end="300" vehsPerHour="240.0"/>
+  <flow id="flow_20" route="routeleft1_0_0" type="rl" departLane="free" departSpeed="random" begin="45" end="345" vehsPerHour="288.0"/>
+  <flow id="flow_30" route="routetop0_1_0" type="rl" departLane="free" departSpeed="random" begin="60" end="360" vehsPerHour="192.0"/>
+</routes>
