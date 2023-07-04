@@ -57,7 +57,7 @@ sumo-gui
      - `which python` to check the current used
      - `echo $PATH` to check the order of the directories in the path variable to look for python
      - Add `export PATH=/../anaconda3/env/flow/bin:$PATH` in the file `~/.bashrc`
-     - Restart the terminal,  update the configuration through`source ~/.bashrc`
+     - Restart the terminal,  update the configuration through `source ~/.bashrc`
 
 ## Virtual installation 
 
@@ -121,6 +121,8 @@ python examples/train_ppo.py CoTV_Dublin
     - ***CoTVMixedCustomEnv*** for mixed-autonomy traffic.
     - ***CoTVAllCustomEnv*** is the implementation of *CoTV* *.
     - ***CoTVNOCoorCustomEnv*** is the implementation of *I-CoTV*.
+
+NOTE: CoTV and M-CoTV are implemented and uploaded in another branch [M-CoTV](https://github.com/Guojyjy/CoTV/tree/M-CoTV). My customized DRL framework, named Coach, supports traffic control under various simulated road scenarios provided by SUMO, meanwhile, simplifying the experiment configuration required on Flow. CoTV can achieve the same level of traffic improvements as running on Flow.
 
 
 #### PressLight[1]
