@@ -1,5 +1,7 @@
 # CoTV, cooperative control for traffic light signals and CAV using DRL
 
+[https://github.com/Guojyjy/CoTV/blob/main/CoTV%20demo.mp4](https://github.com/Guojyjy/CoTV/assets/109638662/92b6d8f5-c1ed-4edb-a158-6dc2f4646043)
+
 The experiments are conducted on a simulator platform [SUMO](https://www.eclipse.org/sumo/). The model design and implementation are based on [Flow](https://flow-project.github.io). [RLlib](https://docs.ray.io/en/latest/rllib.html#) is an open-source library for reinforcement learning.
 
 ## Local installation
@@ -191,6 +193,10 @@ python examples/train_ppo.py FlowCAV_Dublin
 
 
 -----
+
+<img width="470" alt="CoTV poster" src="https://github.com/Guojyjy/CoTV/assets/109638662/90b9ed49-9907-4048-8b4d-a2f4708b9dc8">
+
+[CoTV poster.pdf](https://github.com/Guojyjy/CoTV/blob/main/CoTV%20poster.pdf)
 
 #### Citing
 
